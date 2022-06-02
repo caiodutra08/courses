@@ -8,6 +8,9 @@
             <li>PHP</li>
             <li>Vue</li>
         </ul>
+        <div>
+            <button @click="showEmail">{{textoBotao}}</button>
+        </div>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
         <p>Para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a></p>
         <Picture />
@@ -26,9 +29,20 @@ export default {
     data() {
         return {
             esta_trabalhando: true,
-            mostrar_email: true,
+            mostrar_email: false,
             email: "caio.dutra@gmail.com",
-            meu_link: "https://github.com/caiodutra08 "
+            meu_link: "https://github.com/caiodutra08 ",
+            textoBotao: "Mostrar email"
+        }
+    },
+    methods : {
+        showEmail() {
+            this.mostrar_email = !this.mostrar_email
+            if(!this.mostrar_email) {
+                this.textoBotao = "Mostrar email"
+            } else {
+                this.textoBotao = "Esconder email"
+            }
         }
     }
 };
