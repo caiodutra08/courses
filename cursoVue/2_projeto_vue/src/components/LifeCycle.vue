@@ -17,7 +17,7 @@ export default {
             this.nome = "Caio";
         }, 1000);
 
-        this.lifeCycle(); v
+        this.lifeCycle();
     },
     mounted() {
         setTimeout(() => {
